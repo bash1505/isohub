@@ -63,14 +63,14 @@ const Index = () => {
               <Link to="/services" className="text-sm font-medium hover:text-primary transition-colors">
                 Services
               </Link>
-              <Link to="/certification" className="text-sm font-medium hover:text-primary transition-colors">
-                Certification
-              </Link>
               <Link to="/consultation" className="text-sm font-medium hover:text-primary transition-colors">
                 Consultation
               </Link>
               <Link to="/store" className="text-sm font-medium hover:text-primary transition-colors">
                 Store
+              </Link>
+              <Link to="/portal" className="text-sm font-medium hover:text-primary transition-colors">
+                Client Portal
               </Link>
             </nav>
           </div>

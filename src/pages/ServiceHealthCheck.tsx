@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
@@ -34,7 +33,7 @@ const assessmentAreas = [
   {
     id: 'improvement',
     title: 'Continuous improvement mechanisms',
-    description: 'Assessing systems for capturing opportunities and implementing improvements.'
+    description: "Assessing systems for capturing opportunities and implementing improvements."
   }
 ];
 
