@@ -28,6 +28,9 @@ const Index = () => {
                   <Link to="/knowledge" className="text-lg font-medium hover:text-primary transition-colors">
                     ISO Knowledge Center
                   </Link>
+                  <Link to="/services" className="text-lg font-medium hover:text-primary transition-colors">
+                    Our Services
+                  </Link>
                   <Link to="/certification" className="text-lg font-medium hover:text-primary transition-colors">
                     My Certification Journey
                   </Link>
@@ -56,6 +59,9 @@ const Index = () => {
               </Link>
               <Link to="/knowledge" className="text-sm font-medium hover:text-primary transition-colors">
                 Knowledge
+              </Link>
+              <Link to="/services" className="text-sm font-medium hover:text-primary transition-colors">
+                Services
               </Link>
               <Link to="/certification" className="text-sm font-medium hover:text-primary transition-colors">
                 Certification
