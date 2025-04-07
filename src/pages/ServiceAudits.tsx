@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
@@ -29,7 +28,7 @@ const auditTypes = [
   {
     id: 'remote',
     title: 'Remote/virtual audit options',
-    description: 'Convenient assessments conducted online when on-site visits aren't feasible.'
+    description: "Convenient assessments conducted online when on-site visits aren't feasible."
   }
 ];
 
