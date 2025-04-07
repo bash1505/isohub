@@ -11,6 +11,9 @@ import Services from '@/pages/Services';
 import ServiceCertification from '@/pages/ServiceCertification';
 import ServiceImplementation from '@/pages/ServiceImplementation';
 import ServiceAudits from '@/pages/ServiceAudits';
+import ServiceTraining from '@/pages/ServiceTraining';
+import ServiceSupport from '@/pages/ServiceSupport';
+import ServiceHealthCheck from '@/pages/ServiceHealthCheck';
 
 const App = () => {
   return (
@@ -24,6 +27,9 @@ const App = () => {
         <Route path="/services/certification" element={<ServiceCertification />} />
         <Route path="/services/implementation" element={<ServiceImplementation />} />
         <Route path="/services/audits" element={<ServiceAudits />} />
+        <Route path="/services/training" element={<ServiceTraining />} />
+        <Route path="/services/support" element={<ServiceSupport />} />
+        <Route path="/services/health-check" element={<ServiceHealthCheck />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
       <Toaster />
