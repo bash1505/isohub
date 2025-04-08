@@ -6,7 +6,7 @@ const assessmentAreas = [
   {
     id: 'leadership',
     title: 'Leadership commitment and involvement',
-    description: 'Evaluating top management's engagement with the management system and quality objectives.'
+    description: 'Evaluating top management\'s engagement with the management system and quality objectives.'
   },
   {
     id: 'processes',
