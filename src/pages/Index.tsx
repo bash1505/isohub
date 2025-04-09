@@ -6,6 +6,7 @@ import { Button } from '@/components/ui/button';
 import ThemeToggle from '@/components/ThemeToggle';
 import { Link } from 'react-router-dom';
 import Dashboard from '@/components/Dashboard';
+import CartButton from '@/components/CartButton';
 
 const Index = () => {
   return (
@@ -76,6 +77,7 @@ const Index = () => {
           </div>
 
           <div className="flex items-center gap-2">
+            <CartButton />
             <Button variant="outline" size="sm" asChild>
               <Link to="/portal">Client Login</Link>
             </Button>

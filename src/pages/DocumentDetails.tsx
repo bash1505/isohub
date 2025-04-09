@@ -1,13 +1,10 @@
-
 import React from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { ArrowLeft, CheckCircle, Download, FileText, ShoppingCart } from 'lucide-react';
 import { useCart } from '@/contexts/CartContext';
-
-// Import the document packages from the Store component
-import { DocumentPackage } from '@/components/DocumentPackageCard';
+import { useToast } from '@/components/ui/use-toast';
 
 const documentPackages: {[key: string]: DocumentPackage} = {
   "iso-9001": {
@@ -117,11 +114,22 @@ const DocumentDetails = () => {
   const { id } = useParams();
   const pkg = id ? documentPackages[id] : null;
   const { addToCart } = useCart();
+  const { toast } = useToast();
   
   const handleAddToCart = () => {
     if (pkg) {
       addToCart(pkg);
     }
+  };
+  
+  const handleDownloadSample = () => {
+    toast({
+      title: "Sample Downloaded",
+      description: "Your sample document has been downloaded successfully.",
+    });
+    
+    // In a real implementation, you would initiate an actual file download here
+    // For now, we're just showing a toast notification
   };
   
   if (!pkg) {
@@ -153,7 +161,6 @@ const DocumentDetails = () => {
     }
   };
 
-  // Default values if specific package details aren't available
   const packageDetails = {
     details: `This comprehensive ${pkg.title} includes everything you need to implement, maintain, and certify your management system. All documents are fully editable and customizable to your organization's needs.`,
     suitableFor: ["Small to large enterprises", "Organizations seeking certification", "Companies looking to improve management systems"],
@@ -161,7 +168,6 @@ const DocumentDetails = () => {
     support: "60 days email support included"
   };
 
-  // Use specific details if available
   const currentPackageDetails = id && id in additionalInfo 
     ? additionalInfo[id as keyof typeof additionalInfo] 
     : packageDetails;
@@ -328,7 +334,7 @@ const DocumentDetails = () => {
                 <ShoppingCart className="h-4 w-4" />
                 Add to Cart
               </Button>
-              <Button variant="outline" className="w-full flex items-center gap-2">
+              <Button variant="outline" className="w-full flex items-center gap-2" onClick={handleDownloadSample}>
                 <Download className="h-4 w-4" />
                 Download Sample
               </Button>
