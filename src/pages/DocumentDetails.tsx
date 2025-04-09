@@ -4,6 +4,7 @@ import { useParams, Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { ArrowLeft, CheckCircle, Download, FileText, ShoppingCart } from 'lucide-react';
+import { useCart } from '@/contexts/CartContext';
 
 // Import the document packages from the Store component
 import { DocumentPackage } from '@/components/DocumentPackageCard';
@@ -115,6 +116,13 @@ const documentPackages: {[key: string]: DocumentPackage} = {
 const DocumentDetails = () => {
   const { id } = useParams();
   const pkg = id ? documentPackages[id] : null;
+  const { addToCart } = useCart();
+  
+  const handleAddToCart = () => {
+    if (pkg) {
+      addToCart(pkg);
+    }
+  };
   
   if (!pkg) {
     return (
@@ -316,7 +324,7 @@ const DocumentDetails = () => {
               </div>
             </CardContent>
             <CardFooter className="flex flex-col gap-3">
-              <Button className="w-full flex items-center gap-2">
+              <Button className="w-full flex items-center gap-2" onClick={handleAddToCart}>
                 <ShoppingCart className="h-4 w-4" />
                 Add to Cart
               </Button>

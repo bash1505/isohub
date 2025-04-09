@@ -2,8 +2,9 @@
 import React from 'react';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { FileText, CheckCircle } from 'lucide-react';
+import { FileText, CheckCircle, ShoppingCart } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { useCart } from '@/contexts/CartContext';
 
 export interface DocumentPackage {
   id: string;
@@ -19,6 +20,12 @@ interface DocumentPackageCardProps {
 }
 
 const DocumentPackageCard: React.FC<DocumentPackageCardProps> = ({ package: pkg }) => {
+  const { addToCart } = useCart();
+
+  const handleAddToCart = () => {
+    addToCart(pkg);
+  };
+
   return (
     <Card className="h-full flex flex-col">
       <CardHeader>
@@ -54,7 +61,10 @@ const DocumentPackageCard: React.FC<DocumentPackageCardProps> = ({ package: pkg 
         <Button variant="outline" size="sm" asChild>
           <Link to={`/store/${pkg.id}`}>View Details</Link>
         </Button>
-        <Button>Add to Cart</Button>
+        <Button onClick={handleAddToCart} className="flex items-center gap-2">
+          <ShoppingCart className="h-4 w-4" />
+          Add to Cart
+        </Button>
       </CardFooter>
     </Card>
   );
