@@ -228,19 +228,19 @@ const Checkout = () => {
                         <div className="space-y-2 text-sm">
                           <div className="flex justify-between">
                             <span className="font-medium">Bank:</span>
-                            <span>First National Bank</span>
+                            <span>Tymebank</span>
                           </div>
                           <div className="flex justify-between">
                             <span className="font-medium">Account Name:</span>
-                            <span>Fisher Infused (Pty) Ltd</span>
+                            <span>Fisher Infusions Pty Ltd</span>
                           </div>
                           <div className="flex justify-between">
                             <span className="font-medium">Account Number:</span>
-                            <span>62123456789</span>
+                            <span>53000622911</span>
                           </div>
                           <div className="flex justify-between">
                             <span className="font-medium">Branch Code:</span>
-                            <span>250655</span>
+                            <span>678910</span>
                           </div>
                           <div className="flex justify-between">
                             <span className="font-medium">Reference:</span>

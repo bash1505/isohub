@@ -6,12 +6,26 @@ import { ArrowLeft, CheckCircle, Download, FileText, ShoppingCart } from 'lucide
 import { useCart } from '@/contexts/CartContext';
 import { useToast } from '@/components/ui/use-toast';
 
+// Define the DocumentPackage type
+interface DocumentPackage {
+  id: string;
+  title: string;
+  description: string;
+  price: number;
+  category: string;
+  image: string;
+  featured?: boolean;
+}
+
 const documentPackages: {[key: string]: DocumentPackage} = {
   "iso-9001": {
     id: "iso-9001",
     title: "ISO 9001:2015 – Quality Management System Package",
     description: "Complete documentation package for ISO 9001:2015 QMS implementation",
     price: 7999,
+    category: "quality",
+    image: "iso-9001.png",
+    featured: true,
     includes: [
       "Quality Manual template",
       "Quality Policy and Objectives",
@@ -28,6 +42,9 @@ const documentPackages: {[key: string]: DocumentPackage} = {
     title: "ISO 14001:2015 – Environmental Management System Package",
     description: "Complete documentation package for ISO 14001:2015 EMS implementation",
     price: 6999,
+    category: "environmental",
+    image: "iso-14001.png",
+    featured: true,
     includes: [
       "Environmental Manual",
       "Aspects & Impacts Register",
@@ -42,6 +59,9 @@ const documentPackages: {[key: string]: DocumentPackage} = {
     title: "ISO 45001:2018 – Occupational Health & Safety Management System",
     description: "Documentation bundle for implementing ISO 45001:2018 OH&S",
     price: 6999,
+    category: "occupational",
+    image: "iso-45001.png",
+    featured: true,
     includes: [
       "OH&S Manual",
       "Hazard Identification Register",
@@ -56,6 +76,9 @@ const documentPackages: {[key: string]: DocumentPackage} = {
     title: "ISO 27001:2022 – Information Security Management System",
     description: "Documentation package for ISO 27001:2022 ISMS implementation",
     price: 8999,
+    category: "information",
+    image: "iso-27001.png",
+    featured: true,
     includes: [
       "Information Security Policy",
       "Risk Assessment Methodology",
@@ -70,6 +93,9 @@ const documentPackages: {[key: string]: DocumentPackage} = {
     title: "ISO Implementation Starter Pack (For SMEs)",
     description: "Essential resources for organizations starting their ISO journey",
     price: 3999,
+    category: "quality",
+    image: "iso-starter.png",
+    featured: true,
     includes: [
       "Implementation Plan Template",
       "Project Charter",
@@ -84,6 +110,9 @@ const documentPackages: {[key: string]: DocumentPackage} = {
     title: "Internal Auditor Toolkit",
     description: "Complete package for performing internal ISO audits",
     price: 4999,
+    category: "quality",
+    image: "auditor-toolkit.png",
+    featured: true,
     includes: [
       "Internal Audit Procedure",
       "Audit Schedule Template",
@@ -98,6 +127,9 @@ const documentPackages: {[key: string]: DocumentPackage} = {
     title: "ISO Compliance Mega Bundle",
     description: "Comprehensive documentation covering multiple ISO standards",
     price: 17999,
+    category: "quality",
+    image: "mega-bundle.png",
+    featured: true,
     includes: [
       "All core documentation across ISO 9001, 14001, 45001",
       "Integrated management system templates",
