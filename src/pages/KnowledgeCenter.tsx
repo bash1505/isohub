@@ -5,6 +5,7 @@ import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
 import { Search, Book, ArrowRight } from 'lucide-react';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
+import { Link } from 'react-router-dom';
 
 interface ArticleType {
   id: string;
@@ -125,9 +126,11 @@ const KnowledgeCenter = () => {
                   <CardDescription className="text-sm">{article.description}</CardDescription>
                 </CardContent>
                 <div className="p-4 pt-0 mt-auto">
-                  <Button variant="link" className="p-0 h-auto flex items-center gap-1">
-                    Read Article
-                    <ArrowRight className="h-3 w-3 ml-1" />
+                  <Button variant="link" className="p-0 h-auto flex items-center gap-1" asChild>
+                    <Link to={`/knowledge/${article.id}`}>
+                      Read Article
+                      <ArrowRight className="h-3 w-3 ml-1" />
+                    </Link>
                   </Button>
                 </div>
               </Card>
@@ -173,9 +176,11 @@ const KnowledgeCenter = () => {
                       <CardDescription className="text-sm">{article.description}</CardDescription>
                     </CardContent>
                     <div className="p-4 pt-0 mt-auto">
-                      <Button variant="link" className="p-0 h-auto flex items-center gap-1">
-                        Read Article
-                        <ArrowRight className="h-3 w-3 ml-1" />
+                      <Button variant="link" className="p-0 h-auto flex items-center gap-1" asChild>
+                        <Link to={`/knowledge/${article.id}`}>
+                          Read Article
+                          <ArrowRight className="h-3 w-3 ml-1" />
+                        </Link>
                       </Button>
                     </div>
                   </Card>

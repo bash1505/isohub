@@ -13,7 +13,7 @@ const Store = () => {
       id: "iso-9001",
       title: "ISO 9001:2015 – Quality Management System Package",
       description: "Complete documentation package for ISO 9001:2015 QMS implementation",
-      price: 399,
+      price: 7999,
       includes: [
         "Quality Manual template",
         "Quality Policy and Objectives",
@@ -29,7 +29,7 @@ const Store = () => {
       id: "iso-14001",
       title: "ISO 14001:2015 – Environmental Management System Package",
       description: "Complete documentation package for ISO 14001:2015 EMS implementation",
-      price: 349,
+      price: 6999,
       includes: [
         "Environmental Manual",
         "Aspects & Impacts Register",
@@ -43,7 +43,7 @@ const Store = () => {
       id: "iso-45001",
       title: "ISO 45001:2018 – Occupational Health & Safety Management System",
       description: "Documentation bundle for implementing ISO 45001:2018 OH&S",
-      price: 349,
+      price: 6999,
       includes: [
         "OH&S Manual",
         "Hazard Identification Register",
@@ -57,7 +57,7 @@ const Store = () => {
       id: "iso-27001",
       title: "ISO 27001:2022 – Information Security Management System",
       description: "Documentation package for ISO 27001:2022 ISMS implementation",
-      price: 449,
+      price: 8999,
       includes: [
         "Information Security Policy",
         "Risk Assessment Methodology",
@@ -71,7 +71,7 @@ const Store = () => {
       id: "iso-starter",
       title: "ISO Implementation Starter Pack (For SMEs)",
       description: "Essential resources for organizations starting their ISO journey",
-      price: 199,
+      price: 3999,
       includes: [
         "Implementation Plan Template",
         "Project Charter",
@@ -85,7 +85,7 @@ const Store = () => {
       id: "auditor-toolkit",
       title: "Internal Auditor Toolkit",
       description: "Complete package for performing internal ISO audits",
-      price: 249,
+      price: 4999,
       includes: [
         "Internal Audit Procedure",
         "Audit Schedule Template",
@@ -99,7 +99,7 @@ const Store = () => {
       id: "mega-bundle",
       title: "ISO Compliance Mega Bundle",
       description: "Comprehensive documentation covering multiple ISO standards",
-      price: 899,
+      price: 17999,
       includes: [
         "All core documentation across ISO 9001, 14001, 45001",
         "Integrated management system templates",

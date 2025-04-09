@@ -3,6 +3,7 @@ import React from 'react';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { FileText, CheckCircle } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 export interface DocumentPackage {
   id: string;
@@ -27,7 +28,7 @@ const DocumentPackageCard: React.FC<DocumentPackageCardProps> = ({ package: pkg 
             <CardTitle className="text-lg">{pkg.title}</CardTitle>
           </div>
           <div className="bg-primary/10 text-primary rounded-full px-3 py-1 text-sm font-medium">
-            ${pkg.price}
+            R {pkg.price.toLocaleString()}
           </div>
         </div>
         <CardDescription className="mt-2">{pkg.description}</CardDescription>
@@ -50,7 +51,9 @@ const DocumentPackageCard: React.FC<DocumentPackageCardProps> = ({ package: pkg 
         </div>
       </CardContent>
       <CardFooter className="flex justify-between gap-4 border-t pt-4">
-        <Button variant="outline" size="sm">View Details</Button>
+        <Button variant="outline" size="sm" asChild>
+          <Link to={`/store/${pkg.id}`}>View Details</Link>
+        </Button>
         <Button>Add to Cart</Button>
       </CardFooter>
     </Card>

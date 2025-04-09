@@ -16,6 +16,10 @@ import ServiceSupport from '@/pages/ServiceSupport';
 import ServiceHealthCheck from '@/pages/ServiceHealthCheck';
 import ClientPortal from '@/pages/ClientPortal';
 import ClientDashboard from '@/pages/ClientDashboard';
+import Support from '@/pages/Support';
+import CertificationJourney from '@/pages/CertificationJourney';
+import ArticleDetails from '@/pages/ArticleDetails';
+import DocumentDetails from '@/pages/DocumentDetails';
 
 const App = () => {
   return (
@@ -23,7 +27,9 @@ const App = () => {
       <Routes>
         <Route path="/" element={<Index />} />
         <Route path="/store" element={<Store />} />
+        <Route path="/store/:id" element={<DocumentDetails />} />
         <Route path="/knowledge" element={<KnowledgeCenter />} />
+        <Route path="/knowledge/:id" element={<ArticleDetails />} />
         <Route path="/consultation" element={<BookConsultation />} />
         <Route path="/services" element={<Services />} />
         <Route path="/services/certification" element={<ServiceCertification />} />
@@ -34,6 +40,8 @@ const App = () => {
         <Route path="/services/health-check" element={<ServiceHealthCheck />} />
         <Route path="/portal" element={<ClientPortal />} />
         <Route path="/dashboard" element={<ClientDashboard />} />
+        <Route path="/support" element={<Support />} />
+        <Route path="/certification" element={<CertificationJourney />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
       <Toaster />

@@ -121,9 +121,16 @@ const Index = () => {
             <div>
               <h3 className="text-lg font-semibold mb-3">Contact</h3>
               <address className="text-sm text-muted-foreground not-italic">
-                Email: info@fisherinfusion.com<br />
-                Phone: +1 (555) 123-4567<br />
-                Hours: Mon-Fri, 9am-5pm EST
+                <div className="mb-2">
+                  <strong>Managing Director:</strong> Sebastian Fisher<br />
+                  Email: sebastian@fisherinfused.co.za<br />
+                  Phone: +27 78 647 4544
+                </div>
+                <div>
+                  <strong>Operations Director:</strong> Estelle Fisher<br />
+                  Email: estelle@fisherinfused.co.za<br />
+                  Phone: +27 78 067 2552
+                </div>
               </address>
             </div>
           </div>
