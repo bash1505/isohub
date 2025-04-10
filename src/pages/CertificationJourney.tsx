@@ -1,11 +1,15 @@
 
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { FileText, CheckCircle, Clock, Calendar } from 'lucide-react';
+import { useToast } from '@/components/ui/use-toast';
 
 const CertificationJourney = () => {
+  const navigate = useNavigate();
+  const { toast } = useToast();
+  
   const stages = [
     {
       id: 'assessment',
@@ -13,7 +17,8 @@ const CertificationJourney = () => {
       description: 'Gap analysis to determine your current status against the ISO standard requirements.',
       status: 'completed',
       date: '15 March 2025',
-      documents: ['Gap Analysis Report', 'Initial Assessment Checklist']
+      documents: ['Gap Analysis Report', 'Initial Assessment Checklist'],
+      detailPath: '/services/certification#assessment'
     },
     {
       id: 'planning',
@@ -21,7 +26,8 @@ const CertificationJourney = () => {
       description: 'Develop required documentation and implement processes to meet standard requirements.',
       status: 'in-progress',
       date: '30 May 2025',
-      documents: ['Process Documentation', 'Implementation Plan']
+      documents: ['Process Documentation', 'Implementation Plan'],
+      detailPath: '/services/implementation'
     },
     {
       id: 'internal-audit',
@@ -29,7 +35,8 @@ const CertificationJourney = () => {
       description: 'Verify compliance with the standard through internal auditing.',
       status: 'pending',
       date: '15 July 2025',
-      documents: ['Audit Schedule', 'Audit Checklist']
+      documents: ['Audit Schedule', 'Audit Checklist'],
+      detailPath: '/services/audits'
     },
     {
       id: 'review',
@@ -37,7 +44,8 @@ const CertificationJourney = () => {
       description: 'Leadership review of the management system to ensure it meets objectives.',
       status: 'pending',
       date: '1 August 2025',
-      documents: ['Review Meeting Agenda', 'Management Review Template']
+      documents: ['Review Meeting Agenda', 'Management Review Template'],
+      detailPath: '/services/certification#review'
     },
     {
       id: 'certification',
@@ -45,9 +53,35 @@ const CertificationJourney = () => {
       description: 'External auditor reviews your system for certification.',
       status: 'pending',
       date: '15 September 2025',
-      documents: ['Pre-Audit Checklist', 'Certification Requirements']
+      documents: ['Pre-Audit Checklist', 'Certification Requirements'],
+      detailPath: '/services/certification#certification-audit'
     }
   ];
+
+  const handleViewDetails = (stage) => {
+    navigate(stage.detailPath);
+  };
+
+  const handleContinueWorking = (stage) => {
+    if (stage.id === 'planning') {
+      navigate('/services/implementation');
+    } else {
+      toast({
+        title: "Continue Working",
+        description: `You're continuing work on the ${stage.title} stage.`,
+      });
+      // For demonstration, navigate to the same detail page
+      navigate(stage.detailPath);
+    }
+  };
+
+  const handleLockedStage = () => {
+    toast({
+      title: "Stage Locked",
+      description: "You need to complete previous stages before accessing this one.",
+      variant: "destructive"
+    });
+  };
 
   return (
     <div className="container mx-auto py-8 px-4">
@@ -94,11 +128,29 @@ const CertificationJourney = () => {
                 </ul>
               </div>
               {stage.status === 'completed' ? (
-                <Button variant="outline" className="w-full">View Details</Button>
+                <Button 
+                  variant="outline" 
+                  className="w-full"
+                  onClick={() => handleViewDetails(stage)}
+                >
+                  View Details
+                </Button>
               ) : stage.status === 'in-progress' ? (
-                <Button className="w-full">Continue Working</Button>
+                <Button 
+                  className="w-full"
+                  onClick={() => handleContinueWorking(stage)}
+                >
+                  Continue Working
+                </Button>
               ) : (
-                <Button variant="outline" disabled className="w-full">Locked</Button>
+                <Button 
+                  variant="outline" 
+                  disabled 
+                  className="w-full"
+                  onClick={handleLockedStage}
+                >
+                  Locked
+                </Button>
               )}
             </CardContent>
           </Card>

@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
@@ -6,7 +7,7 @@ import { ArrowLeft, CheckCircle, Download, FileText, ShoppingCart } from 'lucide
 import { useCart } from '@/contexts/CartContext';
 import { useToast } from '@/components/ui/use-toast';
 
-// Define the DocumentPackage type
+// Define the DocumentPackage type with all required properties
 interface DocumentPackage {
   id: string;
   title: string;
@@ -15,6 +16,8 @@ interface DocumentPackage {
   category: string;
   image: string;
   featured?: boolean;
+  includes: string[];
+  importance: string;
 }
 
 const documentPackages: {[key: string]: DocumentPackage} = {
