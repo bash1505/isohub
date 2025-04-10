@@ -24,7 +24,7 @@ const consultationTypes = [
     title: 'Implementation Planning',
     description: 'Detailed planning session for your ISO implementation journey.',
     duration: '90 min',
-    price: '$249',
+    price: 'R2,499',
     icon: Calendar
   },
   {
@@ -32,7 +32,7 @@ const consultationTypes = [
     title: 'Pre-Audit Review',
     description: 'Comprehensive review before your certification audit.',
     duration: '120 min',
-    price: '$349',
+    price: 'R3,499',
     icon: Clock
   }
 ];

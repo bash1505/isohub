@@ -7,7 +7,9 @@ import { BenefitsList } from '@/components/health-check/BenefitsList';
 import { WhyItMatters } from '@/components/health-check/WhyItMatters';
 import { ClientTestimonial } from '@/components/health-check/ClientTestimonial';
 import { StartHealthCheck } from '@/components/health-check/StartHealthCheck';
+import { ISOReadinessQuestionnaire } from '@/components/health-check/ISOReadinessQuestionnaire';
 import { LazyImage } from '@/components/LazyImage';
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 const ServiceHealthCheck = () => {
   return (
@@ -22,21 +24,40 @@ const ServiceHealthCheck = () => {
         />
       </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-12">
-        <div className="lg:col-span-2">
-          <div className="space-y-6">
-            <HealthCheckProcess />
-            <AssessmentAreas />
-            <BenefitsList />
-            <WhyItMatters />
-            <ClientTestimonial />
-          </div>
-        </div>
+      <Tabs defaultValue="about" className="w-full mb-12">
+        <TabsList className="grid w-full grid-cols-2">
+          <TabsTrigger value="about">About ISO Health Check</TabsTrigger>
+          <TabsTrigger value="questionnaire">Take Assessment</TabsTrigger>
+        </TabsList>
+        <TabsContent value="about">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            <div className="lg:col-span-2">
+              <div className="space-y-6">
+                <HealthCheckProcess />
+                <AssessmentAreas />
+                <BenefitsList />
+                <WhyItMatters />
+                <ClientTestimonial />
+              </div>
+            </div>
 
-        <div>
-          <StartHealthCheck />
-        </div>
-      </div>
+            <div>
+              <StartHealthCheck />
+            </div>
+          </div>
+        </TabsContent>
+        <TabsContent value="questionnaire">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            <div className="lg:col-span-2">
+              <ISOReadinessQuestionnaire />
+            </div>
+            
+            <div>
+              <StartHealthCheck />
+            </div>
+          </div>
+        </TabsContent>
+      </Tabs>
     </div>
   );
 };
