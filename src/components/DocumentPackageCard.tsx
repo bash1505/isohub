@@ -5,6 +5,7 @@ import { Button } from '@/components/ui/button';
 import { FileText, CheckCircle, ShoppingCart } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useCart } from '@/contexts/CartContext';
+import { LazyImage } from './LazyImage';
 
 export interface DocumentPackage {
   id: string;
@@ -13,6 +14,7 @@ export interface DocumentPackage {
   price: number;
   includes: string[];
   importance: string;
+  imageSrc?: string;
 }
 
 interface DocumentPackageCardProps {
@@ -21,6 +23,7 @@ interface DocumentPackageCardProps {
 
 const DocumentPackageCard: React.FC<DocumentPackageCardProps> = ({ package: pkg }) => {
   const { addToCart } = useCart();
+  const defaultImage = "https://images.unsplash.com/photo-1512314889357-e157c22f938d?q=80&w=600&auto=format&fit=crop";
 
   const handleAddToCart = () => {
     addToCart(pkg);
@@ -28,6 +31,13 @@ const DocumentPackageCard: React.FC<DocumentPackageCardProps> = ({ package: pkg 
 
   return (
     <Card className="h-full flex flex-col">
+      <div className="h-40 overflow-hidden">
+        <LazyImage
+          src={pkg.imageSrc || defaultImage}
+          alt={pkg.title}
+          className="w-full h-full object-cover transition-transform hover:scale-105 duration-300"
+        />
+      </div>
       <CardHeader>
         <div className="flex items-start justify-between">
           <div className="flex items-center gap-2">

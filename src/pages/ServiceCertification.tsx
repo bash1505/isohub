@@ -4,6 +4,8 @@ import { Card, CardContent } from '@/components/ui/card';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
+import { LazyImage } from '@/components/LazyImage';
+import IllustratedCard from '@/components/IllustratedCard';
 
 const ServiceCertification = () => {
   return (
@@ -21,96 +23,119 @@ const ServiceCertification = () => {
         </p>
       </header>
 
+      <div className="mb-8">
+        <LazyImage 
+          src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=1200&auto=format&fit=crop" 
+          alt="ISO Certification Process" 
+          className="w-full h-64 object-cover rounded-lg shadow-md"
+        />
+      </div>
+
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-12">
         <div className="lg:col-span-2">
           <div className="space-y-6">
-            <Card>
-              <CardContent className="pt-6">
-                <h2 className="text-xl font-semibold mb-4">What's Included</h2>
-                <ul className="space-y-3">
-                  <li className="flex items-start">
-                    <div className="h-5 w-5 rounded-full bg-primary/10 text-primary flex items-center justify-center mr-2 mt-0.5">1</div>
-                    <div>
-                      <span className="font-medium">Initial Discovery Call & Readiness Assessment</span>
-                      <p className="text-sm text-muted-foreground">Understand your current status and certification goals</p>
-                    </div>
-                  </li>
-                  <li className="flex items-start">
-                    <div className="h-5 w-5 rounded-full bg-primary/10 text-primary flex items-center justify-center mr-2 mt-0.5">2</div>
-                    <div>
-                      <span className="font-medium">Tailored Certification Roadmap</span>
-                      <p className="text-sm text-muted-foreground">Customized timeline and implementation plan for your organization</p>
-                    </div>
-                  </li>
-                  <li className="flex items-start">
-                    <div className="h-5 w-5 rounded-full bg-primary/10 text-primary flex items-center justify-center mr-2 mt-0.5">3</div>
-                    <div>
-                      <span className="font-medium">Support with Required Documentation</span>
-                      <p className="text-sm text-muted-foreground">Templates and guidance for creating compliant documentation</p>
-                    </div>
-                  </li>
-                  <li className="flex items-start">
-                    <div className="h-5 w-5 rounded-full bg-primary/10 text-primary flex items-center justify-center mr-2 mt-0.5">4</div>
-                    <div>
-                      <span className="font-medium">Guidance on Policies, Objectives & Process Mapping</span>
-                      <p className="text-sm text-muted-foreground">Development of key management system components</p>
-                    </div>
-                  </li>
-                  <li className="flex items-start">
-                    <div className="h-5 w-5 rounded-full bg-primary/10 text-primary flex items-center justify-center mr-2 mt-0.5">5</div>
-                    <div>
-                      <span className="font-medium">Pre-certification Audit Preparation</span>
-                      <p className="text-sm text-muted-foreground">Mock audits and readiness assessment before certification</p>
-                    </div>
-                  </li>
-                  <li className="flex items-start">
-                    <div className="h-5 w-5 rounded-full bg-primary/10 text-primary flex items-center justify-center mr-2 mt-0.5">6</div>
-                    <div>
-                      <span className="font-medium">Certification Body Selection Assistance</span>
-                      <p className="text-sm text-muted-foreground">Help choosing the right certification body for your needs</p>
-                    </div>
-                  </li>
-                </ul>
-              </CardContent>
-            </Card>
+            <IllustratedCard 
+              imageSrc="https://images.unsplash.com/photo-1600880292089-90a7e086ee0c?q=80&w=600&auto=format&fit=crop"
+              alt="Certification Process"
+              imagePosition="left"
+            >
+              <h2 className="text-xl font-semibold mb-4">What's Included</h2>
+              <ul className="space-y-3">
+                <li className="flex items-start">
+                  <div className="h-5 w-5 rounded-full bg-primary/10 text-primary flex items-center justify-center mr-2 mt-0.5">1</div>
+                  <div>
+                    <span className="font-medium">Initial Discovery Call & Readiness Assessment</span>
+                    <p className="text-sm text-muted-foreground">Understand your current status and certification goals</p>
+                  </div>
+                </li>
+                <li className="flex items-start">
+                  <div className="h-5 w-5 rounded-full bg-primary/10 text-primary flex items-center justify-center mr-2 mt-0.5">2</div>
+                  <div>
+                    <span className="font-medium">Tailored Certification Roadmap</span>
+                    <p className="text-sm text-muted-foreground">Customized timeline and implementation plan for your organization</p>
+                  </div>
+                </li>
+                <li className="flex items-start">
+                  <div className="h-5 w-5 rounded-full bg-primary/10 text-primary flex items-center justify-center mr-2 mt-0.5">3</div>
+                  <div>
+                    <span className="font-medium">Support with Required Documentation</span>
+                    <p className="text-sm text-muted-foreground">Templates and guidance for creating compliant documentation</p>
+                  </div>
+                </li>
+                <li className="flex items-start">
+                  <div className="h-5 w-5 rounded-full bg-primary/10 text-primary flex items-center justify-center mr-2 mt-0.5">4</div>
+                  <div>
+                    <span className="font-medium">Guidance on Policies, Objectives & Process Mapping</span>
+                    <p className="text-sm text-muted-foreground">Development of key management system components</p>
+                  </div>
+                </li>
+                <li className="flex items-start">
+                  <div className="h-5 w-5 rounded-full bg-primary/10 text-primary flex items-center justify-center mr-2 mt-0.5">5</div>
+                  <div>
+                    <span className="font-medium">Pre-certification Audit Preparation</span>
+                    <p className="text-sm text-muted-foreground">Mock audits and readiness assessment before certification</p>
+                  </div>
+                </li>
+                <li className="flex items-start">
+                  <div className="h-5 w-5 rounded-full bg-primary/10 text-primary flex items-center justify-center mr-2 mt-0.5">6</div>
+                  <div>
+                    <span className="font-medium">Certification Body Selection Assistance</span>
+                    <p className="text-sm text-muted-foreground">Help choosing the right certification body for your needs</p>
+                  </div>
+                </li>
+              </ul>
+            </IllustratedCard>
+
+            <IllustratedCard 
+              imageSrc="https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=600&auto=format&fit=crop"
+              alt="Business team discussing ISO standards"
+              imagePosition="right"
+            >
+              <h2 className="text-xl font-semibold mb-4">Why It Matters</h2>
+              <p className="mb-4">
+                ISO certification strengthens your business's reputation, opens doors to new markets, and demonstrates 
+                a commitment to quality, safety, and continuous improvement. Our hands-on support makes the 
+                process clear, structured, and stress-free.
+              </p>
+              <ul className="space-y-2">
+                <li className="flex items-center gap-2">
+                  <div className="h-2 w-2 rounded-full bg-primary"></div>
+                  <span>Enhance your organization's credibility and market position</span>
+                </li>
+                <li className="flex items-center gap-2">
+                  <div className="h-2 w-2 rounded-full bg-primary"></div>
+                  <span>Meet customer and stakeholder requirements for certification</span>
+                </li>
+                <li className="flex items-center gap-2">
+                  <div className="h-2 w-2 rounded-full bg-primary"></div>
+                  <span>Improve internal processes and operational efficiency</span>
+                </li>
+                <li className="flex items-center gap-2">
+                  <div className="h-2 w-2 rounded-full bg-primary"></div>
+                  <span>Reduce the risk of non-compliance and associated costs</span>
+                </li>
+              </ul>
+            </IllustratedCard>
 
             <Card>
               <CardContent className="pt-6">
-                <h2 className="text-xl font-semibold mb-4">Why It Matters</h2>
-                <p className="mb-4">
-                  ISO certification strengthens your business's reputation, opens doors to new markets, and demonstrates 
-                  a commitment to quality, safety, and continuous improvement. Our hands-on support makes the 
-                  process clear, structured, and stress-free.
-                </p>
-                <ul className="space-y-2">
-                  <li className="flex items-center gap-2">
-                    <div className="h-2 w-2 rounded-full bg-primary"></div>
-                    <span>Enhance your organization's credibility and market position</span>
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <div className="h-2 w-2 rounded-full bg-primary"></div>
-                    <span>Meet customer and stakeholder requirements for certification</span>
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <div className="h-2 w-2 rounded-full bg-primary"></div>
-                    <span>Improve internal processes and operational efficiency</span>
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <div className="h-2 w-2 rounded-full bg-primary"></div>
-                    <span>Reduce the risk of non-compliance and associated costs</span>
-                  </li>
-                </ul>
-              </CardContent>
-            </Card>
-
-            <Card>
-              <CardContent className="pt-6">
-                <h2 className="text-xl font-semibold mb-4">Client Testimonials</h2>
-                <blockquote className="border-l-4 border-primary pl-4 italic">
-                  "Fisher Infusion simplified our ISO 9001 certification journey. Their systematic approach saved us 
-                  months of trial and error."
-                  <footer className="mt-2 text-sm font-medium">- Sarah Chen, Operations Director at TechSoft</footer>
-                </blockquote>
+                <div className="flex flex-col md:flex-row gap-6">
+                  <div className="md:w-1/3">
+                    <LazyImage 
+                      src="https://images.unsplash.com/photo-1573497491765-dccce02b29df?q=80&w=600&auto=format&fit=crop"
+                      alt="Satisfied client" 
+                      className="w-full h-40 object-cover rounded-md"
+                    />
+                  </div>
+                  <div className="md:w-2/3">
+                    <h2 className="text-xl font-semibold mb-4">Client Testimonials</h2>
+                    <blockquote className="border-l-4 border-primary pl-4 italic">
+                      "Fisher Infusion simplified our ISO 9001 certification journey. Their systematic approach saved us 
+                      months of trial and error."
+                      <footer className="mt-2 text-sm font-medium">- Sarah Chen, Operations Director at TechSoft</footer>
+                    </blockquote>
+                  </div>
+                </div>
               </CardContent>
             </Card>
 
@@ -144,6 +169,11 @@ const ServiceCertification = () => {
 
         <div>
           <div className="bg-primary/5 rounded-lg p-6 border border-primary/20 sticky top-24">
+            <LazyImage 
+              src="https://images.unsplash.com/photo-1518893063132-36e46dbe2428?q=80&w=600&auto=format&fit=crop"
+              alt="ISO Consultant" 
+              className="w-full h-48 object-cover rounded-md mb-4"
+            />
             <h3 className="font-semibold text-xl mb-4">Ready to Get Started?</h3>
             <p className="mb-6 text-muted-foreground">
               Book a free discovery call with our ISO certification experts to discuss your needs and objectives.

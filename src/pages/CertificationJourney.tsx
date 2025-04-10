@@ -5,6 +5,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { Button } from '@/components/ui/button';
 import { FileText, CheckCircle, Clock, Calendar } from 'lucide-react';
 import { useToast } from '@/components/ui/use-toast';
+import { LazyImage } from '@/components/LazyImage';
 
 const CertificationJourney = () => {
   const navigate = useNavigate();
@@ -18,7 +19,8 @@ const CertificationJourney = () => {
       status: 'completed',
       date: '15 March 2025',
       documents: ['Gap Analysis Report', 'Initial Assessment Checklist'],
-      detailPath: '/services/certification#assessment'
+      detailPath: '/services/certification#assessment',
+      imageSrc: 'https://images.unsplash.com/photo-1494859802809-d069c3b71a8a?q=80&w=600&auto=format&fit=crop'
     },
     {
       id: 'planning',
@@ -27,7 +29,8 @@ const CertificationJourney = () => {
       status: 'in-progress',
       date: '30 May 2025',
       documents: ['Process Documentation', 'Implementation Plan'],
-      detailPath: '/services/implementation'
+      detailPath: '/services/implementation',
+      imageSrc: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=600&auto=format&fit=crop'
     },
     {
       id: 'internal-audit',
@@ -36,7 +39,8 @@ const CertificationJourney = () => {
       status: 'pending',
       date: '15 July 2025',
       documents: ['Audit Schedule', 'Audit Checklist'],
-      detailPath: '/services/audits'
+      detailPath: '/services/audits',
+      imageSrc: 'https://images.unsplash.com/photo-1450101499163-c8848c66ca85?q=80&w=600&auto=format&fit=crop'
     },
     {
       id: 'review',
@@ -45,7 +49,8 @@ const CertificationJourney = () => {
       status: 'pending',
       date: '1 August 2025',
       documents: ['Review Meeting Agenda', 'Management Review Template'],
-      detailPath: '/services/certification#review'
+      detailPath: '/services/certification#review',
+      imageSrc: 'https://images.unsplash.com/photo-1600880292203-757bb62b4baf?q=80&w=600&auto=format&fit=crop'
     },
     {
       id: 'certification',
@@ -54,7 +59,8 @@ const CertificationJourney = () => {
       status: 'pending',
       date: '15 September 2025',
       documents: ['Pre-Audit Checklist', 'Certification Requirements'],
-      detailPath: '/services/certification#certification-audit'
+      detailPath: '/services/certification#certification-audit',
+      imageSrc: 'https://images.unsplash.com/photo-1551836022-d5d88e9218df?q=80&w=600&auto=format&fit=crop'
     }
   ];
 
@@ -93,6 +99,42 @@ const CertificationJourney = () => {
         </p>
       </header>
 
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-8">
+        <div className="lg:col-span-2">
+          <LazyImage 
+            src="https://images.unsplash.com/photo-1507925921958-8a62f3d1a50d?q=80&w=1200&auto=format&fit=crop" 
+            alt="ISO Certification Journey Path" 
+            className="w-full h-64 object-cover rounded-lg shadow-md mb-6"
+          />
+        </div>
+        <div className="bg-primary/5 p-6 rounded-lg border border-primary/20">
+          <h2 className="font-semibold text-xl mb-4">Your Progress</h2>
+          <div className="space-y-4">
+            <div className="flex justify-between items-center">
+              <span>Assessment</span>
+              <span className="text-green-500 font-medium">Completed</span>
+            </div>
+            <div className="flex justify-between items-center">
+              <span>Implementation</span>
+              <span className="text-blue-500 font-medium">In Progress</span>
+            </div>
+            <div className="flex justify-between items-center">
+              <span>Other Stages</span>
+              <span className="text-gray-400 font-medium">Pending</span>
+            </div>
+            <div className="mt-4 pt-4 border-t">
+              <div className="flex items-center justify-between">
+                <span className="text-sm text-muted-foreground">Overall Progress:</span>
+                <span className="text-sm font-medium">35%</span>
+              </div>
+              <div className="w-full bg-primary/10 rounded-full h-2.5 mt-2">
+                <div className="bg-primary h-2.5 rounded-full" style={{ width: '35%' }}></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
       <div className="space-y-6">
         {stages.map((stage) => (
           <Card key={stage.id} className={`border-l-4 ${stage.status === 'completed' ? 'border-l-green-500' : stage.status === 'in-progress' ? 'border-l-blue-500' : 'border-l-gray-300'}`}>
@@ -115,57 +157,75 @@ const CertificationJourney = () => {
               </div>
             </CardHeader>
             <CardContent>
-              <CardDescription className="mb-4">{stage.description}</CardDescription>
-              <div className="space-y-2 mb-4">
-                <h4 className="text-sm font-medium">Resources:</h4>
-                <ul className="space-y-1">
-                  {stage.documents.map((doc, index) => (
-                    <li key={index} className="flex items-center gap-2 text-sm">
-                      <FileText className="h-4 w-4 text-primary" />
-                      <span>{doc}</span>
-                    </li>
-                  ))}
-                </ul>
+              <div className="flex flex-col md:flex-row gap-4">
+                <div className="md:w-1/4">
+                  <LazyImage
+                    src={stage.imageSrc}
+                    alt={stage.title}
+                    className="w-full h-32 object-cover rounded-md"
+                  />
+                </div>
+                <div className="md:w-3/4">
+                  <CardDescription className="mb-4">{stage.description}</CardDescription>
+                  <div className="space-y-2 mb-4">
+                    <h4 className="text-sm font-medium">Resources:</h4>
+                    <ul className="space-y-1">
+                      {stage.documents.map((doc, index) => (
+                        <li key={index} className="flex items-center gap-2 text-sm">
+                          <FileText className="h-4 w-4 text-primary" />
+                          <span>{doc}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                  {stage.status === 'completed' ? (
+                    <Button 
+                      variant="outline" 
+                      className="w-full"
+                      onClick={() => handleViewDetails(stage)}
+                    >
+                      View Details
+                    </Button>
+                  ) : stage.status === 'in-progress' ? (
+                    <Button 
+                      className="w-full"
+                      onClick={() => handleContinueWorking(stage)}
+                    >
+                      Continue Working
+                    </Button>
+                  ) : (
+                    <Button 
+                      variant="outline" 
+                      disabled 
+                      className="w-full"
+                      onClick={handleLockedStage}
+                    >
+                      Locked
+                    </Button>
+                  )}
+                </div>
               </div>
-              {stage.status === 'completed' ? (
-                <Button 
-                  variant="outline" 
-                  className="w-full"
-                  onClick={() => handleViewDetails(stage)}
-                >
-                  View Details
-                </Button>
-              ) : stage.status === 'in-progress' ? (
-                <Button 
-                  className="w-full"
-                  onClick={() => handleContinueWorking(stage)}
-                >
-                  Continue Working
-                </Button>
-              ) : (
-                <Button 
-                  variant="outline" 
-                  disabled 
-                  className="w-full"
-                  onClick={handleLockedStage}
-                >
-                  Locked
-                </Button>
-              )}
             </CardContent>
           </Card>
         ))}
       </div>
 
       <div className="mt-8 bg-primary/5 rounded-lg p-6 border border-primary/20">
-        <div className="text-center mb-6">
-          <h2 className="text-2xl font-bold mb-2">Need Expert Guidance?</h2>
-          <p className="text-muted-foreground">Our ISO consultants can help accelerate your certification journey.</p>
-        </div>
-        <div className="flex justify-center">
-          <Button asChild size="lg">
-            <Link to="/consultation">Book a Consultation</Link>
-          </Button>
+        <div className="flex flex-col md:flex-row items-center gap-6">
+          <div className="md:w-1/4">
+            <LazyImage 
+              src="https://images.unsplash.com/photo-1551836022-deb4988cc6c0?q=80&w=600&auto=format&fit=crop" 
+              alt="Expert ISO Consultant" 
+              className="w-full h-40 object-cover rounded-md"
+            />
+          </div>
+          <div className="md:w-3/4 text-center md:text-left">
+            <h2 className="text-2xl font-bold mb-2">Need Expert Guidance?</h2>
+            <p className="text-muted-foreground mb-4">Our ISO consultants can help accelerate your certification journey.</p>
+            <Button asChild size="lg">
+              <Link to="/consultation">Book a Consultation</Link>
+            </Button>
+          </div>
         </div>
       </div>
     </div>

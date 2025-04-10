@@ -3,6 +3,7 @@ import React from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { ArrowLeft, Book, Calendar, User } from 'lucide-react';
+import { LazyImage } from '@/components/LazyImage';
 
 const articles = {
   "intro-iso9001": {
@@ -66,7 +67,8 @@ const articles = {
     date: "15 March 2025",
     readTime: "5 min",
     category: "Beginner",
-    standard: "ISO 9001"
+    standard: "ISO 9001",
+    imageSrc: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=1200&auto=format&fit=crop"
   },
   "risk-based-thinking": {
     title: "Risk-Based Thinking in ISO Standards",
@@ -132,7 +134,8 @@ const articles = {
     date: "20 March 2025",
     readTime: "8 min",
     category: "Intermediate",
-    standard: "Multiple"
+    standard: "Multiple",
+    imageSrc: "https://images.unsplash.com/photo-1518893063132-36e46dbe2428?q=80&w=1200&auto=format&fit=crop"
   },
   "internal-audits": {
     title: "Conducting Effective Internal Audits",
@@ -229,7 +232,8 @@ const articles = {
     date: "10 April 2025",
     readTime: "12 min",
     category: "Advanced",
-    standard: "Multiple"
+    standard: "Multiple",
+    imageSrc: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=1200&auto=format&fit=crop"
   },
   "iso14001-benefits": {
     title: "Business Benefits of ISO 14001",
@@ -323,7 +327,8 @@ const articles = {
     date: "5 May 2025",
     readTime: "6 min",
     category: "Beginner",
-    standard: "ISO 14001"
+    standard: "ISO 14001",
+    imageSrc: "https://images.unsplash.com/photo-1535937236668-9277ec8900df?q=80&w=1200&auto=format&fit=crop"
   },
   "integrated-systems": {
     title: "Integrating Multiple ISO Management Systems",
@@ -460,7 +465,8 @@ const articles = {
     date: "28 May 2025",
     readTime: "15 min",
     category: "Advanced",
-    standard: "Multiple"
+    standard: "Multiple",
+    imageSrc: "https://images.unsplash.com/photo-1497215842964-222b430dc094?q=80&w=1200&auto=format&fit=crop"
   },
   "iso27001-controls": {
     title: "Understanding ISO 27001 Security Controls",
@@ -588,7 +594,8 @@ const articles = {
     date: "12 June 2025",
     readTime: "10 min",
     category: "Intermediate",
-    standard: "ISO 27001"
+    standard: "ISO 27001",
+    imageSrc: "https://images.unsplash.com/photo-1563206767-5b18f218e8de?q=80&w=1200&auto=format&fit=crop"
   }
 };
 
@@ -623,6 +630,13 @@ const ArticleDetails = () => {
 
       <article className="max-w-4xl mx-auto">
         <header className="mb-8">
+          <div className="rounded-lg overflow-hidden mb-6 h-64">
+            <LazyImage 
+              src={article.imageSrc} 
+              alt={article.title}
+              className="w-full h-full object-cover"
+            />
+          </div>
           <h1 className="text-3xl font-bold tracking-tight mb-3">{article.title}</h1>
           <div className="flex flex-wrap gap-4 text-sm text-muted-foreground mb-4">
             <div className="flex items-center gap-1">
