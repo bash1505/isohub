@@ -1,32 +1,13 @@
 
 import React from 'react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { Book, Calendar, FileText, Users, Bell, MessageCircle, TrendingUp } from 'lucide-react';
+import { Book, Calendar, FileText, Users, Bell, MessageCircle, TrendingUp, Utensils } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
+import { NewsletterSubscribe } from '@/components/NewsletterSubscribe';
+import { LatestUpdates } from '@/components/LatestUpdates';
 
 const Dashboard = () => {
-  const newsUpdates = [
-    {
-      id: 1,
-      title: "ISO 9001:2015 Updates Coming Soon",
-      description: "New amendments to ISO 9001 expected in Q3 2023.",
-      date: "2 days ago"
-    },
-    {
-      id: 2,
-      title: "ISO 27001:2022 Now Available",
-      description: "The latest information security standard is now available in our document store.",
-      date: "1 week ago"
-    },
-    {
-      id: 3,
-      title: "New Environmental Compliance Requirements",
-      description: "Important updates to ISO 14001 implementation guidance.",
-      date: "2 weeks ago"
-    }
-  ];
-
   return (
     <div className="space-y-8">
       <section>
@@ -125,6 +106,23 @@ const Dashboard = () => {
           <Card className="hover:shadow-md transition-shadow">
             <CardHeader className="pb-2">
               <div className="flex items-center gap-2">
+                <Utensils className="h-5 w-5 text-primary" />
+                <CardTitle className="text-lg">ISO 22000 Food Safety</CardTitle>
+              </div>
+            </CardHeader>
+            <CardContent>
+              <CardDescription className="min-h-[60px]">
+                Specialized consulting for food safety management systems to ensure compliance and certification.
+              </CardDescription>
+              <Button asChild className="w-full mt-2" variant="outline">
+                <Link to="/services/iso22000">Learn More</Link>
+              </Button>
+            </CardContent>
+          </Card>
+
+          <Card className="hover:shadow-md transition-shadow">
+            <CardHeader className="pb-2">
+              <div className="flex items-center gap-2">
                 <MessageCircle className="h-5 w-5 text-primary" />
                 <CardTitle className="text-lg">Live Chat & Support</CardTitle>
               </div>
@@ -141,34 +139,14 @@ const Dashboard = () => {
         </div>
       </section>
 
-      <section className="mt-12">
-        <div className="flex items-center gap-2 mb-6">
-          <Bell className="h-5 w-5 text-primary" />
-          <h2 className="text-2xl font-bold tracking-tight">Latest Updates</h2>
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+        <div className="lg:col-span-2">
+          <LatestUpdates />
         </div>
-        
-        <div className="space-y-4">
-          {newsUpdates.map(update => (
-            <Card key={update.id} className="hover:bg-muted/50 transition-colors">
-              <CardHeader className="pb-2">
-                <div className="flex justify-between items-start">
-                  <CardTitle className="text-base">{update.title}</CardTitle>
-                  <span className="text-xs text-muted-foreground">{update.date}</span>
-                </div>
-              </CardHeader>
-              <CardContent>
-                <p className="text-sm text-muted-foreground">{update.description}</p>
-              </CardContent>
-            </Card>
-          ))}
+        <div>
+          <NewsletterSubscribe />
         </div>
-        
-        <div className="mt-4 text-right">
-          <Button variant="link" size="sm">
-            View all updates
-          </Button>
-        </div>
-      </section>
+      </div>
     </div>
   );
 };

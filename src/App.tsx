@@ -14,6 +14,7 @@ import ServiceAudits from '@/pages/ServiceAudits';
 import ServiceTraining from '@/pages/ServiceTraining';
 import ServiceSupport from '@/pages/ServiceSupport';
 import ServiceHealthCheck from '@/pages/ServiceHealthCheck';
+import ServiceISO22000 from '@/pages/ServiceISO22000';
 import ClientPortal from '@/pages/ClientPortal';
 import ClientDashboard from '@/pages/ClientDashboard';
 import Support from '@/pages/Support';
@@ -46,6 +47,7 @@ const App = () => {
           <Route path="/services/training" element={<ServiceTraining />} />
           <Route path="/services/support" element={<ServiceSupport />} />
           <Route path="/services/health-check" element={<ServiceHealthCheck />} />
+          <Route path="/services/iso22000" element={<ServiceISO22000 />} />
           <Route path="/portal" element={<ClientPortal />} />
           <Route path="/dashboard" element={<ClientDashboard />} />
           <Route path="/support" element={<Support />} />

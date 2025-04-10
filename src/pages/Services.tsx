@@ -3,7 +3,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { Calendar, Users, ClipboardCheck, CheckSquare, Building, BadgeCheck } from 'lucide-react';
+import { Calendar, Users, ClipboardCheck, CheckSquare, Building, BadgeCheck, Utensils } from 'lucide-react';
 
 const serviceCategories = [
   {
@@ -26,6 +26,13 @@ const serviceCategories = [
     description: 'Stay audit-ready and identify gaps before the auditor does with our expert assessments.',
     icon: ClipboardCheck,
     path: '/services/audits'
+  },
+  {
+    id: 'iso22000',
+    title: 'ISO 22000 Food Safety',
+    description: 'Specialized consulting for food safety management systems to ensure compliance and certification.',
+    icon: Utensils,
+    path: '/services/iso22000'
   },
   {
     id: 'training',

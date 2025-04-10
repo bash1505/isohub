@@ -7,6 +7,7 @@ import { Search, Book, ArrowRight } from 'lucide-react';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Link } from 'react-router-dom';
 import { LazyImage } from '@/components/LazyImage';
+import { NewsletterSubscribe } from '@/components/NewsletterSubscribe';
 
 interface ArticleType {
   id: string;
@@ -75,6 +76,24 @@ const KnowledgeCenter = () => {
       standard: "ISO 27001",
       readTime: "10 min",
       imageSrc: "https://images.unsplash.com/photo-1563206767-5b18f218e8de?q=80&w=600&auto=format&fit=crop"
+    },
+    {
+      id: "iso22000-haccp",
+      title: "HACCP Principles in ISO 22000",
+      description: "Understanding how to implement Hazard Analysis and Critical Control Points in food safety management.",
+      category: "Intermediate",
+      standard: "ISO 22000",
+      readTime: "11 min",
+      imageSrc: "https://images.unsplash.com/photo-1615866031617-a6e144b7a587?q=80&w=600&auto=format&fit=crop"
+    },
+    {
+      id: "iso22000-prps",
+      title: "Prerequisite Programs for ISO 22000",
+      description: "Essential prerequisite programs needed for an effective food safety management system.",
+      category: "Beginner",
+      standard: "ISO 22000",
+      readTime: "7 min",
+      imageSrc: "https://images.unsplash.com/photo-1593113630400-ea4288922497?q=80&w=600&auto=format&fit=crop"
     }
   ];
 
@@ -104,75 +123,21 @@ const KnowledgeCenter = () => {
         />
       </div>
 
-      <Tabs defaultValue="all" className="mb-8">
-        <TabsList className="mb-6">
-          <TabsTrigger value="all">All Content</TabsTrigger>
-          <TabsTrigger value="iso9001">ISO 9001</TabsTrigger>
-          <TabsTrigger value="iso14001">ISO 14001</TabsTrigger>
-          <TabsTrigger value="iso45001">ISO 45001</TabsTrigger>
-          <TabsTrigger value="iso27001">ISO 27001</TabsTrigger>
-        </TabsList>
-        
-        <TabsContent value="all" className="mt-0">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {filteredArticles.map((article) => (
-              <Card key={article.id} className="hover:shadow-md transition-shadow h-full flex flex-col">
-                <div className="h-40 overflow-hidden">
-                  <LazyImage
-                    src={article.imageSrc}
-                    alt={article.title}
-                    className="w-full h-full object-cover transition-transform hover:scale-105 duration-300"
-                  />
-                </div>
-                <CardHeader className="pb-2">
-                  <div className="flex justify-between items-start">
-                    <div className="flex items-center gap-2">
-                      <Book className="h-4 w-4 text-primary" />
-                      <CardTitle className="text-base">{article.title}</CardTitle>
-                    </div>
-                  </div>
-                  <div className="flex gap-2 mt-2">
-                    <span className="bg-secondary text-xs rounded-full px-2 py-1">{article.standard}</span>
-                    <span className="bg-secondary text-xs rounded-full px-2 py-1">{article.category}</span>
-                    <span className="bg-secondary text-xs rounded-full px-2 py-1">{article.readTime}</span>
-                  </div>
-                </CardHeader>
-                <CardContent className="flex-grow">
-                  <CardDescription className="text-sm">{article.description}</CardDescription>
-                </CardContent>
-                <div className="p-4 pt-0 mt-auto">
-                  <Button variant="link" className="p-0 h-auto flex items-center gap-1" asChild>
-                    <Link to={`/knowledge/${article.id}`}>
-                      Read Article
-                      <ArrowRight className="h-3 w-3 ml-1" />
-                    </Link>
-                  </Button>
-                </div>
-              </Card>
-            ))}
-          </div>
-
-          {filteredArticles.length === 0 && (
-            <div className="text-center py-12">
-              <p className="text-lg text-muted-foreground">No articles found matching your search.</p>
-              <Button 
-                variant="link" 
-                onClick={() => setSearchTerm('')}
-                className="mt-2"
-              >
-                Clear search
-              </Button>
-            </div>
-          )}
-        </TabsContent>
-        
-        {/* Filter tabs for specific standards */}
-        {["iso9001", "iso14001", "iso45001", "iso27001"].map((standard) => (
-          <TabsContent key={standard} value={standard} className="mt-0">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {filteredArticles
-                .filter(article => article.standard.toLowerCase().includes(standard.replace("iso", "iso ")))
-                .map((article) => (
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-8">
+        <div className="lg:col-span-3">
+          <Tabs defaultValue="all" className="mb-8">
+            <TabsList className="mb-6">
+              <TabsTrigger value="all">All Content</TabsTrigger>
+              <TabsTrigger value="iso9001">ISO 9001</TabsTrigger>
+              <TabsTrigger value="iso14001">ISO 14001</TabsTrigger>
+              <TabsTrigger value="iso45001">ISO 45001</TabsTrigger>
+              <TabsTrigger value="iso27001">ISO 27001</TabsTrigger>
+              <TabsTrigger value="iso22000">ISO 22000</TabsTrigger>
+            </TabsList>
+            
+            <TabsContent value="all" className="mt-0">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                {filteredArticles.map((article) => (
                   <Card key={article.id} className="hover:shadow-md transition-shadow h-full flex flex-col">
                     <div className="h-40 overflow-hidden">
                       <LazyImage
@@ -207,10 +172,73 @@ const KnowledgeCenter = () => {
                     </div>
                   </Card>
                 ))}
-            </div>
-          </TabsContent>
-        ))}
-      </Tabs>
+              </div>
+
+              {filteredArticles.length === 0 && (
+                <div className="text-center py-12">
+                  <p className="text-lg text-muted-foreground">No articles found matching your search.</p>
+                  <Button 
+                    variant="link" 
+                    onClick={() => setSearchTerm('')}
+                    className="mt-2"
+                  >
+                    Clear search
+                  </Button>
+                </div>
+              )}
+            </TabsContent>
+            
+            {/* Filter tabs for specific standards */}
+            {["iso9001", "iso14001", "iso45001", "iso27001", "iso22000"].map((standard) => (
+              <TabsContent key={standard} value={standard} className="mt-0">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                  {filteredArticles
+                    .filter(article => article.standard.toLowerCase().includes(standard.replace("iso", "iso ")))
+                    .map((article) => (
+                      <Card key={article.id} className="hover:shadow-md transition-shadow h-full flex flex-col">
+                        <div className="h-40 overflow-hidden">
+                          <LazyImage
+                            src={article.imageSrc}
+                            alt={article.title}
+                            className="w-full h-full object-cover transition-transform hover:scale-105 duration-300"
+                          />
+                        </div>
+                        <CardHeader className="pb-2">
+                          <div className="flex justify-between items-start">
+                            <div className="flex items-center gap-2">
+                              <Book className="h-4 w-4 text-primary" />
+                              <CardTitle className="text-base">{article.title}</CardTitle>
+                            </div>
+                          </div>
+                          <div className="flex gap-2 mt-2">
+                            <span className="bg-secondary text-xs rounded-full px-2 py-1">{article.standard}</span>
+                            <span className="bg-secondary text-xs rounded-full px-2 py-1">{article.category}</span>
+                            <span className="bg-secondary text-xs rounded-full px-2 py-1">{article.readTime}</span>
+                          </div>
+                        </CardHeader>
+                        <CardContent className="flex-grow">
+                          <CardDescription className="text-sm">{article.description}</CardDescription>
+                        </CardContent>
+                        <div className="p-4 pt-0 mt-auto">
+                          <Button variant="link" className="p-0 h-auto flex items-center gap-1" asChild>
+                            <Link to={`/knowledge/${article.id}`}>
+                              Read Article
+                              <ArrowRight className="h-3 w-3 ml-1" />
+                            </Link>
+                          </Button>
+                        </div>
+                      </Card>
+                    ))}
+                </div>
+              </TabsContent>
+            ))}
+          </Tabs>
+        </div>
+      </div>
+      
+      <div className="max-w-md mx-auto">
+        <NewsletterSubscribe />
+      </div>
     </div>
   );
 };

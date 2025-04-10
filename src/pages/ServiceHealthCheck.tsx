@@ -10,6 +10,7 @@ import { StartHealthCheck } from '@/components/health-check/StartHealthCheck';
 import { ISOReadinessQuestionnaire } from '@/components/health-check/ISOReadinessQuestionnaire';
 import { LazyImage } from '@/components/LazyImage';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { NewsletterSubscribe } from '@/components/NewsletterSubscribe';
 
 const ServiceHealthCheck = () => {
   return (
@@ -41,8 +42,9 @@ const ServiceHealthCheck = () => {
               </div>
             </div>
 
-            <div>
+            <div className="space-y-6">
               <StartHealthCheck />
+              <NewsletterSubscribe />
             </div>
           </div>
         </TabsContent>
@@ -52,8 +54,9 @@ const ServiceHealthCheck = () => {
               <ISOReadinessQuestionnaire />
             </div>
             
-            <div>
+            <div className="space-y-6">
               <StartHealthCheck />
+              <NewsletterSubscribe />
             </div>
           </div>
         </TabsContent>
