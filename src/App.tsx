@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { Toaster } from '@/components/ui/toaster';
@@ -45,7 +46,6 @@ const App = () => {
           <Route path="/services/training" element={<ServiceTraining />} />
           <Route path="/services/support" element={<ServiceSupport />} />
           <Route path="/services/health-check" element={<ServiceHealthCheck />} />
-          <Route path="/services/iso22000" element={<ServiceISO22000 />} />
           <Route path="/portal" element={<ClientPortal />} />
           <Route path="/dashboard" element={<ClientDashboard />} />
           <Route path="/support" element={<Support />} />
