@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import DocumentPackageCard, { DocumentPackage } from '@/components/DocumentPackageCard';
 import { Input } from '@/components/ui/input';
@@ -66,6 +65,22 @@ const Store = () => {
         "Business Continuity Plan"
       ],
       importance: "Essential for IT companies and organizations dealing with sensitive data. Enhances data security, reduces breach risks, and meets client expectations."
+    },
+    {
+      id: "iso-22000",
+      title: "ISO 22000:2018 - Food Safety Management System Package",
+      description: "Complete documentation bundle for implementing ISO 22000:2018 FSMS",
+      price: 7999,
+      includes: [
+        "Food Safety Management System Manual",
+        "HACCP Plan Templates",
+        "Prerequisite Programs (PRPs) Documentation",
+        "Standard Operating Procedures (SOPs)",
+        "Food Safety Policy and Objectives",
+        "Risk Assessment Templates",
+        "Internal Audit Checklists"
+      ],
+      importance: "Essential for food industry organizations to ensure food safety, meet regulatory requirements, and gain customer confidence. Helps systematically control food safety hazards and optimize processes."
     },
     {
       id: "iso-starter",

@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { Toaster } from '@/components/ui/toaster';
@@ -14,7 +13,6 @@ import ServiceAudits from '@/pages/ServiceAudits';
 import ServiceTraining from '@/pages/ServiceTraining';
 import ServiceSupport from '@/pages/ServiceSupport';
 import ServiceHealthCheck from '@/pages/ServiceHealthCheck';
-import ServiceISO22000 from '@/pages/ServiceISO22000';
 import ClientPortal from '@/pages/ClientPortal';
 import ClientDashboard from '@/pages/ClientDashboard';
 import Support from '@/pages/Support';

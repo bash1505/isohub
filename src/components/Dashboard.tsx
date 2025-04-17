@@ -1,7 +1,6 @@
-
 import React from 'react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { Book, Calendar, FileText, Users, Bell, MessageCircle, TrendingUp, Utensils } from 'lucide-react';
+import { Book, Calendar, FileText, Users, Bell, MessageCircle, TrendingUp } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
 import { NewsletterSubscribe } from '@/components/NewsletterSubscribe';
@@ -99,23 +98,6 @@ const Dashboard = () => {
               </CardDescription>
               <Button asChild className="w-full mt-2" variant="outline">
                 <Link to="/portal">Access Portal</Link>
-              </Button>
-            </CardContent>
-          </Card>
-
-          <Card className="hover:shadow-md transition-shadow">
-            <CardHeader className="pb-2">
-              <div className="flex items-center gap-2">
-                <Utensils className="h-5 w-5 text-primary" />
-                <CardTitle className="text-lg">ISO 22000 Food Safety</CardTitle>
-              </div>
-            </CardHeader>
-            <CardContent>
-              <CardDescription className="min-h-[60px]">
-                Specialized consulting for food safety management systems to ensure compliance and certification.
-              </CardDescription>
-              <Button asChild className="w-full mt-2" variant="outline">
-                <Link to="/services/iso22000">Learn More</Link>
               </Button>
             </CardContent>
           </Card>
