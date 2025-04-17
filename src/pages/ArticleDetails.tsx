@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
@@ -596,6 +595,342 @@ const articles = {
     category: "Intermediate",
     standard: "ISO 27001",
     imageSrc: "https://images.unsplash.com/photo-1563206767-5b18f218e8de?q=80&w=1200&auto=format&fit=crop"
+  },
+  "iso22000-haccp": {
+    title: "HACCP Principles in ISO 22000",
+    content: `
+      <h2>Understanding HACCP in the Context of ISO 22000</h2>
+      <p>Hazard Analysis and Critical Control Points (HACCP) is a systematic preventive approach to food safety that addresses physical, chemical, and biological hazards as a means of prevention rather than finished product inspection. ISO 22000 incorporates HACCP principles as a core component of its food safety management system framework.</p>
+      
+      <h2>The Seven HACCP Principles</h2>
+      <p>ISO 22000 requires the implementation of all seven HACCP principles:</p>
+      
+      <h3>Principle 1: Conduct a Hazard Analysis</h3>
+      <p>The first step involves identifying and evaluating potential hazards associated with food production at all stages, from raw materials to consumption:</p>
+      <ul>
+        <li>Biological hazards (bacteria, viruses, parasites)</li>
+        <li>Chemical hazards (cleaning agents, pesticides, allergens)</li>
+        <li>Physical hazards (glass, metal, plastic, bone fragments)</li>
+      </ul>
+      <p>ISO 22000 expands the traditional hazard analysis by requiring consideration of:</p>
+      <ul>
+        <li>Likelihood of hazard occurrence</li>
+        <li>Severity of adverse health effects</li>
+        <li>Survival or multiplication of microorganisms</li>
+        <li>Production or persistence of toxins, chemicals, or physical agents</li>
+      </ul>
+      
+      <h3>Principle 2: Determine Critical Control Points (CCPs)</h3>
+      <p>Critical Control Points are specific points, steps, or procedures where control can be applied to prevent, eliminate, or reduce a food safety hazard to an acceptable level.</p>
+      <p>ISO 22000 uses a decision tree approach to identify CCPs, asking questions such as:</p>
+      <ul>
+        <li>Can preventive measures be applied at this step?</li>
+        <li>Is this step specifically designed to eliminate or reduce a hazard?</li>
+        <li>Could contamination occur at unacceptable levels?</li>
+        <li>Will a subsequent step eliminate or reduce the hazard?</li>
+      </ul>
+      
+      <h3>Principle 3: Establish Critical Limits</h3>
+      <p>For each CCP, critical limits must be established to differentiate between safe and unsafe operating conditions:</p>
+      <ul>
+        <li>Temperature limits (minimum/maximum)</li>
+        <li>Time limits (minimum/maximum)</li>
+        <li>pH levels</li>
+        <li>Water activity levels</li>
+        <li>Available chlorine levels</li>
+        <li>Sensory parameters (visual appearance, texture)</li>
+      </ul>
+      <p>ISO 22000 requires that critical limits be measurable and based on scientific evidence.</p>
+      
+      <h3>Principle 4: Establish Monitoring Procedures</h3>
+      <p>Monitoring involves scheduled measurements to assess whether a CCP is under control:</p>
+      <ul>
+        <li>What will be monitored?</li>
+        <li>How will it be monitored?</li>
+        <li>When and how frequently?</li>
+        <li>Who is responsible?</li>
+      </ul>
+      <p>ISO 22000 emphasizes real-time monitoring that provides timely results to allow for immediate corrective actions.</p>
+      
+      <h3>Principle 5: Establish Corrective Actions</h3>
+      <p>Specific actions must be developed for each CCP to deal with deviations when they occur:</p>
+      <ul>
+        <li>Steps to regain control of the process</li>
+        <li>Identification of affected product</li>
+        <li>Determination of product disposition</li>
+        <li>Investigation of cause</li>
+        <li>Preventive measures</li>
+        <li>Documentation of actions taken</li>
+      </ul>
+      
+      <h3>Principle 6: Establish Verification Procedures</h3>
+      <p>Verification confirms that the HACCP system is working effectively through:</p>
+      <ul>
+        <li>Validation of critical limits</li>
+        <li>Review of monitoring records</li>
+        <li>System audits</li>
+        <li>Testing of equipment calibration</li>
+        <li>Product testing</li>
+      </ul>
+      <p>ISO 22000 requires both validation (proving the control measures are capable of achieving intended control) and verification (confirming that requirements are fulfilled).</p>
+      
+      <h3>Principle 7: Establish Record-Keeping and Documentation Procedures</h3>
+      <p>Documentation required includes:</p>
+      <ul>
+        <li>HACCP plan with hazards, CCPs, critical limits, monitoring, and corrective actions</li>
+        <li>Monitoring records</li>
+        <li>Deviation and corrective action records</li>
+        <li>Verification activities</li>
+        <li>Modifications to the HACCP system</li>
+      </ul>
+      
+      <h2>Integration of HACCP Within ISO 22000</h2>
+      <p>ISO 22000 integrates HACCP with:</p>
+      <ul>
+        <li><strong>Interactive Communication:</strong> Internal and external communication throughout the food chain</li>
+        <li><strong>System Management:</strong> Structured management system with documented policies and procedures</li>
+        <li><strong>Prerequisite Programs (PRPs):</strong> Basic conditions and activities necessary to maintain a hygienic environment</li>
+        <li><strong>Operational Prerequisite Programs (OPRPs):</strong> Control measures identified by hazard analysis as necessary to control identified hazards but not managed through CCPs</li>
+      </ul>
+      
+      <h2>HACCP Plan Development in ISO 22000</h2>
+      <p>Steps for developing a HACCP plan within an ISO 22000 framework:</p>
+      <ol>
+        <li>Assemble a multidisciplinary food safety team</li>
+        <li>Describe the product and its intended use</li>
+        <li>Construct process flow diagrams</li>
+        <li>Verify flow diagrams on-site</li>
+        <li>Conduct hazard analysis</li>
+        <li>Determine CCPs and OPRPs</li>
+        <li>Establish monitoring systems</li>
+        <li>Establish corrective actions</li>
+        <li>Verify the system</li>
+        <li>Maintain documentation</li>
+      </ol>
+      
+      <h2>Common Challenges in HACCP Implementation</h2>
+      <ul>
+        <li>Distinguishing between CCPs and OPRPs</li>
+        <li>Setting scientifically valid critical limits</li>
+        <li>Developing effective monitoring systems</li>
+        <li>Resource constraints for small businesses</li>
+        <li>Maintaining a dynamic system that evolves with changing processes</li>
+      </ul>
+      
+      <h2>Benefits of Effective HACCP Integration</h2>
+      <ul>
+        <li>Systematic approach to food safety hazard control</li>
+        <li>Resource optimization by focusing on critical areas</li>
+        <li>Rapid response to deviations</li>
+        <li>Documented evidence of food safety control</li>
+        <li>Improved regulatory compliance</li>
+        <li>Enhanced consumer confidence</li>
+      </ul>
+    `,
+    author: "Sebastian Fisher",
+    date: "15 April 2025",
+    readTime: "11 min",
+    category: "Intermediate",
+    standard: "ISO 22000",
+    imageSrc: "https://images.unsplash.com/photo-1615866031617-a6e144b7a587?q=80&w=1200&auto=format&fit=crop"
+  },
+  "iso22000-prps": {
+    title: "Prerequisite Programs for ISO 22000",
+    content: `
+      <h2>The Foundation of Food Safety: Prerequisite Programs</h2>
+      <p>Prerequisite Programs (PRPs) are the fundamental conditions and activities necessary to maintain a hygienic environment throughout the food chain. In ISO 22000, they form the essential foundation upon which an effective Food Safety Management System (FSMS) is built.</p>
+      
+      <h2>The Role of PRPs in ISO 22000</h2>
+      <p>Within the ISO 22000 framework, PRPs serve several crucial functions:</p>
+      <ul>
+        <li>Control basic environmental and operational conditions</li>
+        <li>Reduce the likelihood of introducing hazards through the work environment</li>
+        <li>Reduce biological, chemical, and physical contamination</li>
+        <li>Support HACCP by managing basic hygiene factors</li>
+        <li>Allow HACCP to focus on significant hazards requiring Critical Control Points</li>
+      </ul>
+      
+      <h2>Types of Prerequisite Programs</h2>
+      
+      <h3>Basic PRPs (bPRPs)</h3>
+      <p>These programs manage fundamental hygiene conditions and are typically based on:</p>
+      <ul>
+        <li>Good Manufacturing Practices (GMPs)</li>
+        <li>Good Hygiene Practices (GHPs)</li>
+        <li>Good Agricultural Practices (GAPs)</li>
+        <li>Good Distribution Practices (GDPs)</li>
+      </ul>
+      
+      <h3>Operational PRPs (oPRPs)</h3>
+      <p>These are identified through hazard analysis as essential to control food safety hazards, but are not managed through Critical Control Points. They:</p>
+      <ul>
+        <li>Control likely hazard introduction points</li>
+        <li>Require monitoring and record-keeping</li>
+        <li>Need defined corrective actions</li>
+        <li>Require verification activities</li>
+      </ul>
+      
+      <h2>Essential Prerequisite Programs for ISO 22000</h2>
+      
+      <h3>1. Construction and Layout of Buildings</h3>
+      <p>Requirements include:</p>
+      <ul>
+        <li>Appropriate location away from environmental contaminants</li>
+        <li>Suitable building design to prevent pest entry</li>
+        <li>Effective separation of processing areas</li>
+        <li>Adequate space for equipment and operations</li>
+        <li>Proper workflow design to prevent cross-contamination</li>
+        <li>Appropriate interior structures (floors, walls, ceilings)</li>
+      </ul>
+      
+      <h3>2. Premises and Workspace</h3>
+      <p>Key aspects include:</p>
+      <ul>
+        <li>Segregation of processing areas based on contamination risk</li>
+        <li>Designated changing facilities</li>
+        <li>Adequate drainage systems</li>
+        <li>Proper waste management facilities</li>
+        <li>Controlled access to production areas</li>
+      </ul>
+      
+      <h3>3. Utilities – Air, Water, Energy</h3>
+      <p>Requirements for:</p>
+      <ul>
+        <li>Potable water supply and testing</li>
+        <li>Water treatment systems if needed</li>
+        <li>Air quality and ventilation</li>
+        <li>Lighting appropriate for operations</li>
+        <li>Backup systems for critical utilities</li>
+      </ul>
+      
+      <h3>4. Waste Disposal</h3>
+      <p>Systems for:</p>
+      <ul>
+        <li>Segregation of different waste types</li>
+        <li>Waste container management</li>
+        <li>Licensed waste contractors</li>
+        <li>Drainage and effluent treatment</li>
+        <li>Prevention of waste accumulation in processing areas</li>
+      </ul>
+      
+      <h3>5. Equipment Suitability and Maintenance</h3>
+      <p>Requirements include:</p>
+      <ul>
+        <li>Food-grade equipment design and materials</li>
+        <li>Accessible for cleaning and inspection</li>
+        <li>Preventive maintenance programs</li>
+        <li>Calibration of monitoring equipment</li>
+        <li>Equipment repair procedures</li>
+      </ul>
+      
+      <h3>6. Management of Purchased Materials</h3>
+      <p>Controls for:</p>
+      <ul>
+        <li>Supplier evaluation and approval</li>
+        <li>Material specifications</li>
+        <li>Incoming material inspection</li>
+        <li>Storage conditions for raw materials</li>
+        <li>Inventory rotation (FIFO/FEFO)</li>
+      </ul>
+      
+      <h3>7. Cleaning and Sanitizing</h3>
+      <p>Systems for:</p>
+      <ul>
+        <li>Documented cleaning and sanitizing procedures</li>
+        <li>Approved cleaning chemicals</li>
+        <li>Cleaning equipment management</li>
+        <li>Clean-in-place (CIP) systems</li>
+        <li>Verification of cleaning effectiveness</li>
+      </ul>
+      
+      <h3>8. Pest Control</h3>
+      <p>Programs including:</p>
+      <ul>
+        <li>Integrated pest management approach</li>
+        <li>Monitoring and trending of pest activity</li>
+        <li>Physical barriers to prevent pest entry</li>
+        <li>Approved pesticide usage</li>
+        <li>Documentation of pest control activities</li>
+      </ul>
+      
+      <h3>9. Personnel Hygiene</h3>
+      <p>Requirements for:</p>
+      <ul>
+        <li>Health screening for food handlers</li>
+        <li>Hand washing facilities and procedures</li>
+        <li>Clean work wear and protective clothing</li>
+        <li>Rules for eating, drinking, and smoking</li>
+        <li>Visitor control procedures</li>
+      </ul>
+      
+      <h3>10. Product Recall and Traceability</h3>
+      <p>Systems for:</p>
+      <ul>
+        <li>Batch identification</li>
+        <li>Traceability of materials throughout production</li>
+        <li>Mock recall exercises</li>
+        <li>Crisis management procedures</li>
+        <li>Communication with authorities and consumers</li>
+      </ul>
+      
+      <h3>11. Food Defense and Food Fraud</h3>
+      <p>Modern PRPs now include:</p>
+      <ul>
+        <li>Vulnerability assessments</li>
+        <li>Physical security measures</li>
+        <li>Personnel security</li>
+        <li>Raw material authenticity verification</li>
+        <li>Tamper-evident packaging</li>
+      </ul>
+      
+      <h2>Implementing PRPs in ISO 22000</h2>
+      <p>Steps for effective PRP implementation:</p>
+      <ol>
+        <li>Identify applicable regulatory and industry requirements</li>
+        <li>Conduct a gap analysis against current practices</li>
+        <li>Develop appropriate programs with clear responsibilities</li>
+        <li>Document procedures and monitoring requirements</li>
+        <li>Train personnel on PRP requirements</li>
+        <li>Implement monitoring systems</li>
+        <li>Verify effectiveness through inspections and audits</li>
+        <li>Continuously improve based on findings</li>
+      </ol>
+      
+      <h2>PRP Documentation Requirements</h2>
+      <p>ISO 22000 requires documentation of PRPs including:</p>
+      <ul>
+        <li>Program descriptions and objectives</li>
+        <li>Monitoring procedures and frequencies</li>
+        <li>Corrective action protocols</li>
+        <li>Verification activities</li>
+        <li>Records of monitoring and corrective actions</li>
+      </ul>
+      
+      <h2>Common Challenges in PRP Implementation</h2>
+      <ul>
+        <li>Insufficient resources for comprehensive programs</li>
+        <li>Inadequate training of personnel</li>
+        <li>Lack of management commitment</li>
+        <li>Difficulty maintaining programs over time</li>
+        <li>Balancing documentation requirements with practical application</li>
+      </ul>
+      
+      <h2>Benefits of Effective PRP Systems</h2>
+      <ul>
+        <li>Simplified HACCP system by reducing the number of CCPs</li>
+        <li>Consistent product safety and quality</li>
+        <li>Efficient use of resources</li>
+        <li>Reduced risk of product recalls</li>
+        <li>Enhanced regulatory compliance</li>
+        <li>Improved operational efficiency</li>
+      </ul>
+    `,
+    author: "Estelle Fisher",
+    date: "10 April 2025",
+    readTime: "7 min",
+    category: "Beginner",
+    standard: "ISO 22000",
+    imageSrc: "https://images.unsplash.com/photo-1593113630400-ea4288922497?q=80&w=1200&auto=format&fit=crop"
   }
 };
 
