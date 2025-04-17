@@ -863,4 +863,17 @@ export const articles: ArticlesData = {
       <p>Systems for:</p>
       <ul>
         <li>Batch identification</li>
-        <li>Traceability of materials throughout production
+        <li>Traceability of materials throughout production</li>
+        <li>Finished product coding</li>
+        <li>Mock recall procedures</li>
+        <li>Communication protocols during recalls</li>
+      </ul>
+    `,
+    author: "Sebastian Fisher",
+    date: "20 April 2025",
+    readTime: "7 min",
+    category: "Beginner",
+    standard: "ISO 22000",
+    imageSrc: "https://images.unsplash.com/photo-1593113630400-ea4288922497?q=80&w=1200&auto=format&fit=crop"
+  }
+};
