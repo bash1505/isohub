@@ -1,39 +1,17 @@
 
-import React from 'react';
+import React, { useState } from 'react';
 import DocumentPackageCard from '../DocumentPackageCard';
 import { Input } from '@/components/ui/input';
 import { Search } from 'lucide-react';
+import { documentPackages } from '@/data/documentPackages';
 
 const StoreEmbed: React.FC = () => {
-  const documentPackages = [
-    {
-      id: "iso-9001",
-      title: "ISO 9001:2015 – Quality Management System Package",
-      description: "Complete documentation package for ISO 9001:2015 QMS implementation",
-      price: 7999,
-      includes: [
-        "Quality Manual template",
-        "Quality Policy and Objectives",
-        "Process interaction map",
-        "Risk & opportunity register",
-        "Internal audit checklist"
-      ],
-      importance: "Essential for quality management certification"
-    },
-    {
-      id: "iso-14001",
-      title: "ISO 14001:2015 – Environmental Management System Package",
-      description: "Complete documentation package for ISO 14001:2015 EMS implementation",
-      price: 6999,
-      includes: [
-        "Environmental Manual",
-        "Aspects & Impacts Register",
-        "Legal Requirements Tracker",
-        "Emergency Preparedness Plan"
-      ],
-      importance: "Critical for environmental compliance"
-    }
-  ];
+  const [searchTerm, setSearchTerm] = useState('');
+
+  const filteredPackages = documentPackages.filter(pkg => 
+    pkg.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+    pkg.description.toLowerCase().includes(searchTerm.toLowerCase())
+  );
 
   return (
     <div className="w-full h-full min-h-screen bg-background p-4">
@@ -43,12 +21,14 @@ const StoreEmbed: React.FC = () => {
           <Input
             placeholder="Search document packages..."
             className="pl-10"
+            value={searchTerm}
+            onChange={(e) => setSearchTerm(e.target.value)}
           />
         </div>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-        {documentPackages.map((pkg) => (
+        {filteredPackages.map((pkg) => (
           <DocumentPackageCard key={pkg.id} package={pkg} />
         ))}
       </div>
