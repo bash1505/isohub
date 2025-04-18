@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { Toaster } from '@/components/ui/toaster';
@@ -24,6 +23,7 @@ import Cart from '@/pages/Cart';
 import Checkout from '@/pages/Checkout';
 import ThankYou from '@/pages/ThankYou';
 import { CartProvider } from '@/contexts/CartContext';
+import StoreEmbed from '@/components/store/StoreEmbed';
 
 const App = () => {
   return (
@@ -33,6 +33,7 @@ const App = () => {
           <Route path="/" element={<Index />} />
           <Route path="/store" element={<Store />} />
           <Route path="/store/:id" element={<DocumentDetails />} />
+          <Route path="/store/embed" element={<StoreEmbed />} />
           <Route path="/cart" element={<Cart />} />
           <Route path="/checkout" element={<Checkout />} />
           <Route path="/thank-you" element={<ThankYou />} />

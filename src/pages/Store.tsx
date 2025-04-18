@@ -127,6 +127,13 @@ const Store = () => {
     }
   ];
 
+  const embedCode = `<iframe
+  src="${window.location.origin}/store/embed"
+  width="100%"
+  height="800"
+  frameborder="0"
+></iframe>`;
+
   const filteredPackages = documentPackages.filter(pkg => 
     pkg.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
     pkg.description.toLowerCase().includes(searchTerm.toLowerCase())
@@ -162,6 +169,20 @@ const Store = () => {
         {filteredPackages.map((pkg) => (
           <DocumentPackageCard key={pkg.id} package={pkg} />
         ))}
+      </div>
+
+      <div className="mb-8">
+        <details className="bg-muted p-4 rounded-lg">
+          <summary className="font-medium cursor-pointer">Embed Store</summary>
+          <div className="mt-4">
+            <p className="text-sm text-muted-foreground mb-2">
+              Copy and paste this code to embed the document store in your website:
+            </p>
+            <pre className="bg-background p-4 rounded-md text-sm overflow-x-auto">
+              <code>{embedCode}</code>
+            </pre>
+          </div>
+        </details>
       </div>
 
       {filteredPackages.length === 0 && (
