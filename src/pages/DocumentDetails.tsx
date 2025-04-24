@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
@@ -6,148 +5,11 @@ import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle }
 import { ArrowLeft, CheckCircle, Download, FileText, ShoppingCart } from 'lucide-react';
 import { useCart } from '@/contexts/CartContext';
 import { useToast } from '@/components/ui/use-toast';
-
-// Define the DocumentPackage type with all required properties
-interface DocumentPackage {
-  id: string;
-  title: string;
-  description: string;
-  price: number;
-  category: string;
-  image: string;
-  featured?: boolean;
-  includes: string[];
-  importance: string;
-}
-
-const documentPackages: {[key: string]: DocumentPackage} = {
-  "iso-9001": {
-    id: "iso-9001",
-    title: "ISO 9001:2015 – Quality Management System Package",
-    description: "Complete documentation package for ISO 9001:2015 QMS implementation",
-    price: 7999,
-    category: "quality",
-    image: "iso-9001.png",
-    featured: true,
-    includes: [
-      "Quality Manual template",
-      "Quality Policy and Objectives",
-      "Process interaction map",
-      "Risk & opportunity register",
-      "Internal audit checklist",
-      "Non-conformance log",
-      "Management review templates"
-    ],
-    importance: "Foundational for organizations focused on customer satisfaction, process improvement, and operational consistency. Required by many clients and contracts as a sign of quality commitment."
-  },
-  "iso-14001": {
-    id: "iso-14001",
-    title: "ISO 14001:2015 – Environmental Management System Package",
-    description: "Complete documentation package for ISO 14001:2015 EMS implementation",
-    price: 6999,
-    category: "environmental",
-    image: "iso-14001.png",
-    featured: true,
-    includes: [
-      "Environmental Manual",
-      "Aspects & Impacts Register",
-      "Legal & Other Requirements Tracker",
-      "Emergency Preparedness Plan",
-      "Waste Management Policy"
-    ],
-    importance: "Helps organizations reduce environmental impact, comply with regulations, and improve sustainability practices."
-  },
-  "iso-45001": {
-    id: "iso-45001",
-    title: "ISO 45001:2018 – Occupational Health & Safety Management System",
-    description: "Documentation bundle for implementing ISO 45001:2018 OH&S",
-    price: 6999,
-    category: "occupational",
-    image: "iso-45001.png",
-    featured: true,
-    includes: [
-      "OH&S Manual",
-      "Hazard Identification Register",
-      "Incident Report Forms",
-      "Emergency Response Plan",
-      "Training & Competency Matrix"
-    ],
-    importance: "Protects the workforce, lowers risks, and ensures legal compliance with workplace safety laws."
-  },
-  "iso-27001": {
-    id: "iso-27001",
-    title: "ISO 27001:2022 – Information Security Management System",
-    description: "Documentation package for ISO 27001:2022 ISMS implementation",
-    price: 8999,
-    category: "information",
-    image: "iso-27001.png",
-    featured: true,
-    includes: [
-      "Information Security Policy",
-      "Risk Assessment Methodology",
-      "Asset Inventory Template",
-      "Access Control Policy",
-      "Business Continuity Plan"
-    ],
-    importance: "Essential for IT companies and organizations dealing with sensitive data. Enhances data security, reduces breach risks, and meets client expectations."
-  },
-  "iso-starter": {
-    id: "iso-starter",
-    title: "ISO Implementation Starter Pack (For SMEs)",
-    description: "Essential resources for organizations starting their ISO journey",
-    price: 3999,
-    category: "quality",
-    image: "iso-starter.png",
-    featured: true,
-    includes: [
-      "Implementation Plan Template",
-      "Project Charter",
-      "Gap Analysis Tool",
-      "Communication Plan",
-      "Training Presentation Slides (editable)"
-    ],
-    importance: "Perfect for small to medium-sized companies starting their ISO journey. Helps them organize and roll out ISO implementation systematically."
-  },
-  "auditor-toolkit": {
-    id: "auditor-toolkit",
-    title: "Internal Auditor Toolkit",
-    description: "Complete package for performing internal ISO audits",
-    price: 4999,
-    category: "quality",
-    image: "auditor-toolkit.png",
-    featured: true,
-    includes: [
-      "Internal Audit Procedure",
-      "Audit Schedule Template",
-      "Audit Report Template",
-      "Auditor Competency Checklist",
-      "Non-conformance & Corrective Action Tracker"
-    ],
-    importance: "Empowers internal teams to maintain compliance and prepare for certification audits."
-  },
-  "mega-bundle": {
-    id: "mega-bundle",
-    title: "ISO Compliance Mega Bundle",
-    description: "Comprehensive documentation covering multiple ISO standards",
-    price: 17999,
-    category: "quality",
-    image: "mega-bundle.png",
-    featured: true,
-    includes: [
-      "All core documentation across ISO 9001, 14001, 45001",
-      "Integrated management system templates",
-      "Common procedures across standards",
-      "Document control procedure",
-      "Audit management system",
-      "Non-conformance handling process"
-    ],
-    importance: "Ideal for companies seeking to certify in multiple standards. Saves time, reduces duplication, and ensures cohesion."
-  }
-};
+import { documentPackages } from '@/data/documentPackages';
 
 const DocumentDetails = () => {
   const { id } = useParams();
-  const pkg = id ? documentPackages[id] : null;
+  const pkg = id ? documentPackages.find(p => p.id === id) : null;
   const { addToCart } = useCart();
   const { toast } = useToast();
   
