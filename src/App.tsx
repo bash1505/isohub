@@ -1,6 +1,8 @@
+
 import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { Toaster } from '@/components/ui/toaster';
+import Layout from '@/components/Layout';
 import Index from '@/pages/Index';
 import Store from '@/pages/Store';
 import KnowledgeCenter from '@/pages/KnowledgeCenter';
@@ -30,28 +32,30 @@ const App = () => {
     <BrowserRouter>
       <CartProvider>
         <Routes>
-          <Route path="/" element={<Index />} />
-          <Route path="/store" element={<Store />} />
-          <Route path="/store/:id" element={<DocumentDetails />} />
-          <Route path="/store/embed" element={<StoreEmbed />} />
-          <Route path="/cart" element={<Cart />} />
-          <Route path="/checkout" element={<Checkout />} />
-          <Route path="/thank-you" element={<ThankYou />} />
-          <Route path="/knowledge" element={<KnowledgeCenter />} />
-          <Route path="/knowledge/:id" element={<ArticleDetails />} />
-          <Route path="/consultation" element={<BookConsultation />} />
-          <Route path="/services" element={<Services />} />
-          <Route path="/services/certification" element={<ServiceCertification />} />
-          <Route path="/services/implementation" element={<ServiceImplementation />} />
-          <Route path="/services/audits" element={<ServiceAudits />} />
-          <Route path="/services/training" element={<ServiceTraining />} />
-          <Route path="/services/support" element={<ServiceSupport />} />
-          <Route path="/services/health-check" element={<ServiceHealthCheck />} />
-          <Route path="/portal" element={<ClientPortal />} />
-          <Route path="/dashboard" element={<ClientDashboard />} />
-          <Route path="/support" element={<Support />} />
-          <Route path="/certification" element={<CertificationJourney />} />
-          <Route path="*" element={<NotFound />} />
+          <Route element={<Layout />}>
+            <Route path="/" element={<Index />} />
+            <Route path="/store" element={<Store />} />
+            <Route path="/store/:id" element={<DocumentDetails />} />
+            <Route path="/store/embed" element={<StoreEmbed />} />
+            <Route path="/cart" element={<Cart />} />
+            <Route path="/checkout" element={<Checkout />} />
+            <Route path="/thank-you" element={<ThankYou />} />
+            <Route path="/knowledge" element={<KnowledgeCenter />} />
+            <Route path="/knowledge/:id" element={<ArticleDetails />} />
+            <Route path="/consultation" element={<BookConsultation />} />
+            <Route path="/services" element={<Services />} />
+            <Route path="/services/certification" element={<ServiceCertification />} />
+            <Route path="/services/implementation" element={<ServiceImplementation />} />
+            <Route path="/services/audits" element={<ServiceAudits />} />
+            <Route path="/services/training" element={<ServiceTraining />} />
+            <Route path="/services/support" element={<ServiceSupport />} />
+            <Route path="/services/health-check" element={<ServiceHealthCheck />} />
+            <Route path="/portal" element={<ClientPortal />} />
+            <Route path="/dashboard" element={<ClientDashboard />} />
+            <Route path="/support" element={<Support />} />
+            <Route path="/certification" element={<CertificationJourney />} />
+            <Route path="*" element={<NotFound />} />
+          </Route>
         </Routes>
         <Toaster />
       </CartProvider>
