@@ -5,6 +5,7 @@ import { Toaster } from '@/components/ui/toaster';
 import Layout from '@/components/Layout';
 import Index from '@/pages/Index';
 import Store from '@/pages/Store';
+import DocumentStoreLanding from '@/pages/DocumentStoreLanding';
 import KnowledgeCenter from '@/pages/KnowledgeCenter';
 import BookConsultation from '@/pages/BookConsultation';
 import NotFound from '@/pages/NotFound';
@@ -35,6 +36,7 @@ const App = () => {
           <Route element={<Layout />}>
             <Route path="/" element={<Index />} />
             <Route path="/store" element={<Store />} />
+            <Route path="/store-landing" element={<DocumentStoreLanding />} />
             <Route path="/store/:id" element={<DocumentDetails />} />
             <Route path="/store/embed" element={<StoreEmbed />} />
             <Route path="/cart" element={<Cart />} />
